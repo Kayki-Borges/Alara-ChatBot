@@ -61,3 +61,22 @@ body {
     height: 60px;
     width: 160px;
 }
+
+@media (max-width: 395px) {
+    .menu-top {
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        box-shadow: 0 0 0 0;
+        justify-content: space-between;
+        width: 395px;
+    }
+
+    .menu-top .lad-e h1{
+        font-size: 30px;
+    }
+
+    .menu-top .lad-e a img {
+        display: none;
+    }
+}
