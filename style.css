@@ -39,14 +39,19 @@ body {
     font-size: 50px;
 }
 
-.menu-top .lad-e a{
-    text-decoration: none;
-    font-family: "Funnel Sans", sans-serif;
-    color: #421B0F;
-    font-size: 25px;
-    font-weight: 800;
-    margin-top: 25px;
+.menu-top .lad-e a img {
+    position: absolute;
+    left: 12em;
+    top: 2.5em;
+    width: 200px;
+    height: 36px;
+    transition: ease-in-out .3s;
 }
+
+
+.menu-top .lad-e a img:hover{
+    transform: scale(1.1);
+}   
 
 .menu-top .lad-d{
     margin-right: 1em;
