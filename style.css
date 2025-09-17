@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.menu-top {
+    display: flex;
+    position: fixed;
+    background-color: #f4f4f4;
+    width: 1200px;
+    height: 100px;
+    align-items: center;
+    top: 5%;
+    left:6.5%;
+    justify-content: space-between;
+    border-radius: 30px;
+    box-shadow: 5px 10px 15px 1px rgba(128, 128, 128, 0.459);
+    border-bottom: 1px solid rgb(128, 128, 128);
+}
+
+.menu-top .lad-e{
+    display: flex;
+    margin-left: 1em;
+    gap: 1em;
+}
+
+.menu-top .lad-e h1{
+    text-transform: uppercase;
+    color: #421B0F;
+    font-family: "Funnel Sans", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.menu-top .lad-e a{
+    text-decoration: none;
+    font-family: "Funnel Sans", sans-serif;
+    color: #421B0F;
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 25px;
+}
+
+.menu-top .lad-d{
+    margin-right: 1em;
+}
+
+.menu-top .lad-d img{
+    height: 60px;
+    width: 160px;
+}
