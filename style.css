@@ -62,7 +62,7 @@ body {
     width: 160px;
 }
 
-@media (max-width: 412px) {
+@media screen and (max-width: 412px) {
     .menu-top {
         top: 0;
         left: 0;
