@@ -107,6 +107,7 @@ body {
     color: #421B0F;
     font-family: "Funell Sans", sans-serif;
     border: 1px solid #421B0F;
+    box-shadow: 0 5px 5px gray;
 }
         
 .sent {
@@ -115,6 +116,7 @@ body {
     align-self: flex-end;
     border-bottom-right-radius: 5px;
     font-family: "Funell Sans", sans-serif;
+    box-shadow: 0 5px 5px gray;
 }
         
 .time {
