@@ -252,4 +252,7 @@ body {
         width: 100%;
         top: 90%;
     }
-}
+
+    .dev {
+        display: none;
+    }
