@@ -24,7 +24,6 @@
             </div>
         </div>
     </header>
-    <div class="chat-wrapper">
      <div class="chat-container">
         <div class="chat-messages" id="chatMessages">
 
@@ -37,12 +36,9 @@
                 <div class="typing-dot"></div>
             </div>
         </div>
-        <div class="input-container">
-            <div class="chat-input">
-                <input type="text" id="messageInput" placeholder="Digite sua mensagem..." autocomplete="off">
-                <button id="sendButton"><i class="bi bi-arrow-right-short"></i></button>
-            </div>
-        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Digite sua mensagem..." autocomplete="off">
+            <button id="sendButton"><i class="bi bi-arrow-right-short"></i></button>
         </div>
     </div>
     <script >
@@ -51,33 +47,10 @@
             const messageInput = document.getElementById('messageInput');
             const sendButton = document.getElementById('sendButton');
             const typingIndicator = document.getElementById('typingIndicator');
-            const body = document.body;
             
-            // Variável para controlar se o teclado está aberto
-            let keyboardVisible = false;
-
             // Adicionar mensagem de boas-vindas
             addMessage('Olá! Eu sou a Alara, estou aqui para te ajudar. O que você quer saber sobre a UFCA?', 'received');
             
-            // Detectar quando o input recebe foco (teclado provavelmente abrindo)
-            messageInput.addEventListener('focus', function() {
-                keyboardVisible = true;
-                body.classList.add('keyboard-open');
-                
-                // Rolar para o final das mensagens quando o teclado abrir
-                setTimeout(() => {
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                }, 300);
-            });
-
-              // Detectar quando o input perde foco (teclado provavelmente fechando)
-            messageInput.addEventListener('blur', function() {
-                // Só remove a classe se o teclado estava visível
-                if (keyboardVisible) {
-                    body.classList.remove('keyboard-open');
-                    keyboardVisible = false;
-                }
-            });
             
             // Função para adicionar mensagem ao chat
             function addMessage(text, type) {
@@ -148,7 +121,7 @@
                             response = "Olá! Como posso te ajudar?"
                         } else if (message.toLowerCase().includes( 'matricula')) {
                             response = 'Para se inscrever na UFCA, você precisa participar do processo seletivo através do SISU. Acesse o site oficial da UFCA para mais informações.';
-                        } else if (message.toLowerCase().includes('cursos')) {
+                        } else if (message.toLowerCase().includes('curso')) {
                             response = 'A UFCA oferece diversos cursos de graduação nas áreas de Engenharia, Ciências Exatas, Humanas e Saúde. Consulte o site para a lista completa.';
                         } else if (message.toLowerCase().includes('campus') || message.toLowerCase().includes('onde')) {
                             response = 'A UFCA possui campus em Juazeiro do Norte, Crato, Barbalha e Brejo Santo. O campus principal fica em Juazeiro do Norte.';
@@ -163,28 +136,6 @@
                 }
             }
         });
-
-         // Detectar mudanças na altura da viewport (indicativo de teclado aparecendo/desaparecendo)
-            let viewportHeight = window.innerHeight;
-            window.addEventListener('resize', function() {
-                // Se a altura da viewport diminuiu significativamente, provavelmente o teclado apareceu
-                if (window.innerHeight < viewportHeight * 0.7) {
-                    keyboardVisible = true;
-                    body.classList.add('keyboard-open');
-                    
-                    // Rolar para o final das mensagens quando o teclado abrir
-                    setTimeout(() => {
-                        chatMessages.scrollTop = chatMessages.scrollHeight;
-                    }, 300);
-                } 
-                // Se a altura da viewport voltou ao normal, provavelmente o teclado fechou
-                else if (keyboardVisible && window.innerHeight >= viewportHeight * 0.9) {
-                    body.classList.remove('keyboard-open');
-                    keyboardVisible = false;
-                }
-                
-                viewportHeight = window.innerHeight;
-            });
     </script>
 </body>
 </html>
