@@ -134,6 +134,7 @@ body {
     outline: none;
     font-size: 15px;
     font-family: "Funell Sans", sans-serif;
+    color: #421B0F;
 }
 
 .chat-input button {
@@ -174,6 +175,13 @@ body {
     .chat-container {
         width: 100%;
         height: 100%;
+        margin-bottom: 5em;
         border-radius: 0;
+    }
+
+    .chat-input {
+        position: fixed;
+        width: 100%;
+        top: 90%;
     }
 }
