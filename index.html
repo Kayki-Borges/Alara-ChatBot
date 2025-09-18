@@ -75,6 +75,12 @@
                         'Para se matricular na UFCA, você precisa participar de processos seletivos como SiSU, vestibular ou transferência. Confira mais em: https://www.ufca.edu.br/ingresso/'
                     ]
                 },
+                'localizacao':{
+                    patterns: ['localização','onde fica', 'em que lugar fica', 'onde tá', 'onde acho'],
+                    responses: [
+                        'A Universidade Federal do Cariri (UFCA) está localizada no sul do Ceará, com campus em várias cidades da região:Campus Juazeiro do Norte - Sede da Reitoria, Campus Crato,Campus Barbalha,Campus Brejo Santo e Campus Icó. Endereço da sede da reitoria:Av. Tenente Raimundo Rocha, 1639 - Cidade Universitária, Juazeiro do Norte - CE'
+                    ]
+                },
                 'cursos': {
                     patterns: ['cursos', 'graduação', 'que cursos oferece', 'áreas de estudo'],
                     responses: [
@@ -204,6 +210,7 @@
                 this.style.height = (this.scrollHeight) + 'px';
             });
         });
+        
     </script>
 </body>
 </html>
