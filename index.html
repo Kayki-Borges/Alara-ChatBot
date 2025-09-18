@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="PT-br">
 <head>
+    <link rel="icon" href="IMG/Brasão_UFCA_em_Alta_Definição.svg">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Brasão_UFCA_em_Alta_Definição.svg">
     <title>ALARA - ChatBot da UFCA</title>
 </head>
 <body>
@@ -14,15 +14,90 @@
         
             <h1>alara</h1>
             <a href="https://www.ufca.edu.br/">
-            <img src="Screenshot 2025-09-17 at 09-44-50 Protótipo 1 – Figma.png" alt="">
+            <img src="IMG/Screenshot 2025-09-17 at 09-44-50 Protótipo 1 – Figma.png" alt="">
             </a>
             </div>
 
             <div class="lad-d">
-                <a href="https://www.ufca.edu.br/"><img src="image.png" alt="logo ufca"></a>
+                <a href="https://www.ufca.edu.br/"><img src="IMG/image.png" alt="logo ufca"></a>
             </div>
         </div>
     </header>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <div class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Digite sua mensagem..." autocomplete="off">
+            <button id="sendButton">Enviar</button>
+        </div>
+    </div>
+    <script >
+         document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageInput = document.getElementById('messageInput');
+            const sendButton = document.getElementById('sendButton');
+            
+            // Adicionar algumas mensagens iniciais
+            addMessage('Olá! eu sou a Alara, estou aqui para te ajudar.O que você quer saber sobre a UFCA?', 'received');
+            
+            // Função para adicionar mensagem ao chat
+            function addMessage(text, type) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', type);
+                
+                const messageText = document.createElement('div');
+                messageText.textContent = text;
+                
+                const timeSpan = document.createElement('div');
+                timeSpan.classList.add('time');
+                timeSpan.textContent = getCurrentTime();
+                
+                messageDiv.appendChild(messageText);
+                messageDiv.appendChild(timeSpan);
+                chatMessages.appendChild(messageDiv);
+                
+                // Rolagem automática para a última mensagem
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Função para obter a hora atual formatada
+            function getCurrentTime() {
+                const now = new Date();
+                return `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            }
+            
+            // Enviar mensagem ao clicar no botão
+            sendButton.addEventListener('click', sendMessage);
+            
+            // Enviar mensagem ao pressionar Enter
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            function sendMessage() {
+                const message = messageInput.value.trim();
+                if (message !== '') {
+                    addMessage(message, 'sent');
+                    messageInput.value = '';
+                    
+                    // Simular resposta após um curto período
+                    setTimeout(() => {
+                        const responses = [
+                            'Interessante!',
+                            'Entendo...',
+                            'Como posso ajudar?',
+                            'Ótimo ponto!',
+                            'Precisa de mais alguma coisa?'
+                        ];
+                        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                        addMessage(randomResponse, 'received');
+                    }, 1000);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
