@@ -7,6 +7,10 @@
 
 body {
     background-color: whitesmoke;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .menu-top {
@@ -232,4 +236,12 @@ body {
         width: 100%;
         top: 90%;
     }
+
+     .keyboard-open .input-container {
+            transform: translateY(-50px);
+        }
+        
+        .keyboard-open .chat-container {
+            transform: translateY(-100px);
+        }
 }
