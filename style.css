@@ -241,4 +241,15 @@ body {
         width: 100%;
         top: 90%;
     }
+
+    
+.typing-indicator {
+    display: none;
+    align-items: center;
+    padding: 5px 15px;
+    color: #666;
+    font-size: 14px;
+    font-family: "Funel Sans", sans-serif;
+    position: fixed;
+}
 }
