@@ -15,12 +15,12 @@
         
             <h1>alara</h1>
             <a href="https://www.ufca.edu.br/">
-            <img src="Screenshot 2025-09-17 at 09-44-50 Protótipo 1 – Figma.png" alt="">
+            <img src="IMG/Screenshot 2025-09-17 at 09-44-50 Protótipo 1 – Figma.png" alt="">
             </a>
             </div>
 
             <div class="lad-d">
-                <a href="https://www.ufca.edu.br/"><img src="image.png" alt="logo ufca"></a>
+                <a href="https://www.ufca.edu.br/"><img src="IMG/image.png" alt="logo ufca"></a>
             </div>
         </div>
     </header>
@@ -48,9 +48,31 @@
             const sendButton = document.getElementById('sendButton');
             const typingIndicator = document.getElementById('typingIndicator');
             
+            // Variável para controlar se o teclado está aberto
+            let keyboardVisible = false;
+
             // Adicionar mensagem de boas-vindas
             addMessage('Olá! Eu sou a Alara, estou aqui para te ajudar. O que você quer saber sobre a UFCA?', 'received');
             
+            // Detectar quando o input recebe foco (teclado provavelmente abrindo)
+            messageInput.addEventListener('focus', function() {
+                keyboardVisible = true;
+                body.classList.add('keyboard-open');
+                
+                // Rolar para o final das mensagens quando o teclado abrir
+                setTimeout(() => {
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 300);
+            });
+
+              // Detectar quando o input perde foco (teclado provavelmente fechando)
+            messageInput.addEventListener('blur', function() {
+                // Só remove a classe se o teclado estava visível
+                if (keyboardVisible) {
+                    body.classList.remove('keyboard-open');
+                    keyboardVisible = false;
+                }
+            });
             
             // Função para adicionar mensagem ao chat
             function addMessage(text, type) {
@@ -136,6 +158,28 @@
                 }
             }
         });
+
+         // Detectar mudanças na altura da viewport (indicativo de teclado aparecendo/desaparecendo)
+            let viewportHeight = window.innerHeight;
+            window.addEventListener('resize', function() {
+                // Se a altura da viewport diminuiu significativamente, provavelmente o teclado apareceu
+                if (window.innerHeight < viewportHeight * 0.7) {
+                    keyboardVisible = true;
+                    body.classList.add('keyboard-open');
+                    
+                    // Rolar para o final das mensagens quando o teclado abrir
+                    setTimeout(() => {
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }, 300);
+                } 
+                // Se a altura da viewport voltou ao normal, provavelmente o teclado fechou
+                else if (keyboardVisible && window.innerHeight >= viewportHeight * 0.9) {
+                    body.classList.remove('keyboard-open');
+                    keyboardVisible = false;
+                }
+                
+                viewportHeight = window.innerHeight;
+            });
     </script>
 </body>
 </html>
