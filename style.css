@@ -16,7 +16,7 @@ body {
 .menu-top {
     display: flex;
     position: fixed;
-    background-color: #f4f4f4;
+    background-color: #62c2d4;
     width: 1350px;
     height: 100px;
     align-items: center;
@@ -24,7 +24,7 @@ body {
     left:1%;
     justify-content: space-between;
     border-radius: 30px;
-    box-shadow: 5px 10px 15px 1px rgba(128, 128, 128, 0.459);
+    box-shadow: 0 5px 5px rgba(128, 128, 128, 0.534);
     border-bottom: 1px solid rgb(128, 128, 128);
     border-top: 1px solid rgb(128, 128, 128);
     z-index: 99999999;
@@ -38,25 +38,27 @@ body {
 
 .menu-top .lad-e h1{
     text-transform: uppercase;
-    color: #421B0F;
+    color: #f4f4f4;
     font-family: "Funnel Sans", sans-serif;
     font-style: normal;
     font-weight: 800;
     font-size: 50px;
 }
 
-.menu-top .lad-e a img {
-    position: absolute;
-    left: 12em;
-    top: 2.5em;
-    width: 200px;
-    height: 36px;
-    transition: ease-in-out .3s;
+.menu-top .lad-e a{
+    margin-top: 1em;
+    font-size: 25px;
+    font-family: "Funnel Sans", sans-serif;
+    text-decoration: none;
+    color: #f4f4f4 ;
+    font-weight: 800;
+    transition: ease-in-out .2s;
 }
 
 
-.menu-top .lad-e a img:hover{
+.menu-top .lad-e a:hover{
     transform: scale(1.1);
+    color: #f2975e;
 }   
 
 .menu-top .lad-d{
@@ -243,7 +245,8 @@ body {
     .chat-container {
         width: 100%;
         height: 100%;
-        margin-bottom: 10em;
+        margin-bottom: 5em;
+        border-radius: 0;
     }
 
     .chat-input {
@@ -252,7 +255,11 @@ body {
         top: 90%;
     }
 
-    .dev {
+    .dev{
         display: none;
     }
-    
+
+    .typing-indicator {
+        margin-bottom: 5em;
+    }
+}
