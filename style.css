@@ -242,10 +242,11 @@ body {
         border-radius: 0;
     }
 
-    .chat-message {
+    .chat-messages {
         margin-left: 0;
         margin-right: 0;
     }
+    
     .chat-input {
         position: fixed;
         width: 100%;
