@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         'Até mais! Não hesite em entrar em contato se tiver mais perguntas.'
                     ]
                 },
+                'ufca': {
+                    patterns : ['oque é', 'para que',],
+                    responses : ['A Universidade Federal do Cariri (UFCA) é uma instituição pública de ensino superior localizada na cidade de Juazeiro do Norte, no estado do Ceará. Foi criada em 2006 e tem como missão promover a educação superior de qualidade']
+                },
                 'matricula': {
                     patterns: ['matrícula', 'como me matricular', 'processo seletivo', 'vestibular', 'ingresso', 'matriculo'],
                     responses: [
