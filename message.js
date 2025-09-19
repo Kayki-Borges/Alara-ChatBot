@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             };
 
-            addMessage('Olá! Eu sou a Alara, estou aqui para te ajudar. O que você quer saber sobre a UFCA?', 'received');
+            addMessage('Olá! Eu sou a Alara, estou aqui para te ajudar. O que você precisa saber sobre a UFCA?', 'received');
 
             // Função para adicionar mensagem ao chat
             function addMessage(text, type) {
