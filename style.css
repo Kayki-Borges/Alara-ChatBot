@@ -16,7 +16,7 @@ body {
 .menu-top {
     display: flex;
     position: fixed;
-    background-color: #66afbd;
+    background-color:  #66afbd;
     width: 1350px;
     height: 100px;
     align-items: center;
@@ -36,38 +36,21 @@ body {
     gap: 1em;
 }
 
-.menu-top .lad-e h1{
-    text-transform: uppercase;
-    color: #f4f4f4;
-    font-family: "Funnel Sans", sans-serif;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 50px;
+.menu-top .lad-e img{
+    width: 220px;
+    height: 90px;
+    margin-left: 1em;
 }
-
-.menu-top .lad-e a{
-    margin-top: 1em;
-    font-size: 25px;
-    font-family: "Funnel Sans", sans-serif;
-    text-decoration: none;
-    color: #f4f4f4 ;
-    font-weight: 800;
-    transition: ease-in-out .2s;
-}
-
-
-.menu-top .lad-e a:hover{
-    transform: scale(1.1);
-    color: #f2975e;
-}   
 
 .menu-top .lad-d{
     margin-right: 1em;
 }
 
 .menu-top .lad-d img{
-    height: 60px;
-    width: 160px;
+    height: 90px;
+    width: 230px;
+    margin-right: 1em;
+    margin-top: 1em;
 }
 
 .chat-container {
@@ -237,18 +220,23 @@ body {
         width: 100%;
     }
 
-    .menu-top .lad-e h1{
-        font-size: 40px;
+    .menu-top .lad-e img{
+        width: 150px;
+        height: 80px;
     }
 
     .menu-top .lad-e a{
         display: none;
     }
+
+    .menu-top .lad-d img{
+        margin-top: 2em;
+    }
     
     .chat-container {
         width: 100%;
         height: 100%;
-        margin-bottom: 10em;
+        margin-bottom: 5em;
         border-radius: 0;
     }
 
