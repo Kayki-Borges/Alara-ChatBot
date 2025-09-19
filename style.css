@@ -248,8 +248,11 @@ body {
     .chat-container {
         width: 100%;
         height: 100%;
-        margin-bottom: 5em;
         border-radius: 0;
+    }
+
+    .chat-messages {
+        margin-bottom: 1em;
     }
 
     .chat-input {
