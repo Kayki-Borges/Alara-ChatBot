@@ -214,6 +214,7 @@ body {
     .menu-top {
         top: 0;
         left: 0;
+        margin-bottom: 0;
         border-radius: 0;
         box-shadow: 0 0 0 0;
         justify-content: space-between;
