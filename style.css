@@ -38,18 +38,14 @@ svg{
     width: 190px;
     height: 90px;
     margin-left: 1em;
-    margin-top: 1em;
-}
-
-.menu-top .lad-d{
-    margin-right: 1em;
+    margin-top: 2em;
 }
 
 .menu-top .lad-d img{
     height: 90px;
     width: 230px;
     margin-right: 1em;
-    margin-top: 1em;
+    margin-top: 3em;
 }
 
 .chat-container {
@@ -227,9 +223,9 @@ svg{
     }
 
     .menu-top .lad-d img{
-        width: 150px;
-        height: 70px;
-        margin-top: 2em;
+        width: 230px;
+        height: 80px;
+        margin-top: 1em;
     }
     
     .chat-container {
