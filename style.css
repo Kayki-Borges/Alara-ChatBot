@@ -247,6 +247,10 @@ svg{
         top: 90%;
     }
 
+    .typing-indicator{
+        margin-bottom: 5em;
+    }
+    
     .dev{
         display: none;
     }
