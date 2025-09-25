@@ -232,7 +232,7 @@ svg{
     .chat-container {
         width: 100%;
         height: 100%;
-        margin-bottom: 7em;
+        margin-bottom: 9em;
         margin-top: 6em;
     }
 
@@ -248,7 +248,7 @@ svg{
     }
 
     .typing-indicator{
-        margin-bottom: 5em;
+        margin-bottom: 3em;
     }
     
     .dev{
