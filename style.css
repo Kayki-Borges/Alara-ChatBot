@@ -246,6 +246,10 @@ svg{
         width: 100%;
         top: 90%;
     }
+
+    .typing-indicator{
+        margin-bottom: 1em;
+    }
     
     .dev{
         display: none;
