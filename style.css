@@ -131,6 +131,10 @@ footer {
     color: #421B0F;
 }
 
+.chat-input input:focus{
+    border: 1px solid #66afbd;
+}
+
 .chat-input button {
     background: #668cbd;
     color: white;
