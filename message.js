@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // ADICIONE ESTE CÓDIGO APÓS O EXISTENTE
 
 // Substitua '.suas-divs' pela classe real das suas divs
-const suasDivs = document.querySelectorAll('.p');
+const suasDivs = document.querySelectorAll('.scroll-item');
 
 suasDivs.forEach(div => {
     div.style.cursor = 'pointer';
@@ -200,4 +200,42 @@ suasDivs.forEach(div => {
         this.style.opacity = '1';
     });
 });
+
+const suasDivs2 = document.querySelectorAll('.p');
+
+suasDivs2.forEach(div => {
+    div.style.cursor = 'pointer';
+    
+    // Se não tiver data-message, usa o texto da div
+    if (!div.hasAttribute('data-message')) {
+        div.setAttribute('data-message', div.textContent.trim());
+    }
+    
+    div.addEventListener('click', function() {
+        const message = this.getAttribute('data-message');
+        
+        // Enviar mensagem do usuário
+        addMessage(message, 'sent');
+        
+        // Mostrar digitando
+        showTypingIndicator();
+        
+        // Resposta após delay
+        setTimeout(() => {
+            hideTypingIndicator();
+            const response = processMessage(message);
+            addMessage(response, 'received');
+        }, 1000);
+    });
+    
+    // Efeitos opcionais
+    div.addEventListener('mouseenter', function() {
+        this.style.opacity = '0.8';
+    });
+    
+    div.addEventListener('mouseleave', function() {
+        this.style.opacity = '1';
+    });
+});
         });
+        
