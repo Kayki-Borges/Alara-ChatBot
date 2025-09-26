@@ -26,7 +26,6 @@
         // Event listeners para os itens da barra de scroll
         document.querySelectorAll('.scroll-item').forEach(item => {
             item.addEventListener('click', function() {
-                messageInput.focus();
                 
                 // Efeito visual de confirmação
                 this.style.background = 'linear-gradient(135deg, #5a9ca8, #5a7ca8)';
