@@ -51,20 +51,24 @@ svg{
     border-right: 1px solid #666;
     gap: 1em;
     height: 100%;
+    width: 22%;
     position: fixed;
 }
 
 .perguntas h1{
     margin-top: 8em;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 800;
     font-family: "Funnel Sans", sans-serif;
     text-align: center;
+    text-transform: uppercase;
+    color: #421B0F;
 }
 
 .perguntas .p{
     background-color: #f4f4f4;
     text-align: center;
+    color: #421B0F;
     margin: 10px;
     height: 3em;
     display: flex;
@@ -73,7 +77,7 @@ svg{
     border-radius: 10px;
     box-shadow: 0 5px 5px rgba(128, 128, 128, 0.534);
     border-bottom: 1px solid rgb(128, 128, 128);
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 800;
     font-family: "Funnel Sans", sans-serif;
     cursor: pointer;
@@ -85,11 +89,11 @@ svg{
 }
 
 .chat-container {
-    width: 79%;
+    width: 78%;
     height: 80%;
     margin-top: 8.5em;
     margin-bottom: 5em;
-    margin-left: 18em;
+    margin-left: 19em;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -157,7 +161,7 @@ footer {
     display: flex;
     padding: 15px;
     z-index: 1000;
-    margin-left: 18em;
+    margin-left: 19em;
 }
 
 .chat-input input {
