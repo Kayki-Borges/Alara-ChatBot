@@ -64,11 +64,33 @@
         </div>
      </div>
     <footer>
-        <div class="chat-input">
-            <input type="text"  rows="5" cols="50" id="messageInput" placeholder="Digite sua mensagem..." autocomplete="off">
-            <button id="sendButton"><i class="bi bi-arrow-right-short"></i></button>
+         <div class="bottom-bar-container">
+        <!-- Indicadores de scroll -->
+        <div class="scroll-indicators">
+            <div class="scroll-dot active"></div>
+            <div class="scroll-dot"></div>
+            <div class="scroll-dot"></div>
         </div>
+
+        <!-- Barra de rolagem horizontal -->
+        <div class="horizontal-scroll" id="horizontalScroll">
+            <div class="scroll-content">
+                <button class="scroll-item" >🎓 Quais cursos oferecem?</button>
+                <button class="scroll-item" >📅 Calendário acadêmico</button>
+                <button class="scroll-item" >📝 Processo de matrícula</button>
+                <button class="scroll-item" >📍 Onde fica a UFCA?</button>
+                <button class="scroll-item" >📞 Contato e telefone</button>
+                <button class="scroll-item" >ℹ️ O que é a UFCA?</button>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <input type="text" row="5" cols="50" class="message-input" placeholder="Digite sua mensagem..." id="messageInput" autocomplete="off">
+            <button class="send-button" id="sendButton">Enviar</button>
+        </div>
+    </div>
     </footer>
     <script src="message.js"></script>
+    <script src="scroll-effect.js"></script>
 </body>
 </html>
