@@ -104,7 +104,7 @@ svg{
     height: 80%;
     margin-top: 8.5em;
     margin-bottom: 5em;
-    margin-left: 19em;
+    margin-left: 20em;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -238,7 +238,7 @@ footer {
             gap: 10px;
             align-items: center;
             margin-left: .5em;
-            width: 77%;
+            width: 76%;
         }
 
         .message-input {
