@@ -69,24 +69,34 @@ svg{
 .perguntas .p{
     background-color: #f4f4f4;
     text-align: center;
-    color: #421B0F;
+    background: linear-gradient(135deg, #66afbd, #668cbd);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    white-space: nowrap;
     margin: 10px;
     height: 3em;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
     box-shadow: 0 5px 5px rgba(128, 128, 128, 0.534);
-    border-bottom: 1px solid rgb(128, 128, 128);
-    font-size: 18px;
-    font-weight: 800;
     font-family: "Funnel Sans", sans-serif;
-    cursor: pointer;
-    transition: all ease-in-out .4s;
+    transition: 
+        background-color 0.4s ease,
+        background-image 0.4s ease,
+        color 0.4s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .perguntas .p:hover{
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 175, 189, 0.4);
 }
 
 .chat-container {
@@ -156,70 +166,9 @@ footer {
     width: 100%;
     height: 10%;
     margin-bottom: 10px;
-}
-
-.chat-input {
-    display: flex;
-    padding: 15px;
-    z-index: 1000;
     margin-left: 19em;
 }
 
-.chat-input input {
-    flex: 1;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    outline: none;
-    font-size: 20px;
-    font-family: "Funell Sans", sans-serif;
-    color: #421B0F;
-    transition: all ease-in-out .2s;
-}
-
-.chat-input input:focus{
-    border: 1px solid #66afbd;
-}
-
-.chat-input button {
-    background: #668cbd;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
-    margin-left: 1em;
-}
-        
-.chat-input button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.5s;
-}
-
-.chat-input button:hover::before {
-    left: 100%;
-}
-
-.chat-input button:hover {
-    background: #66afbd;
-    box-shadow: 0 0 15px rgba(102, 175, 189, 0.8);
-} 
-
-.chat-input button i{
-    font-size: 30px;
-}
 
 .typing-indicator {
     display: none;
@@ -228,6 +177,7 @@ footer {
     color: #666;
     font-size: 14px;
     font-family: "Funel Sans", sans-serif;
+    margin-bottom: 1em;
 }
         
 .typing-indicator.active {
@@ -278,6 +228,55 @@ footer {
 .dev a{
     color: #4d9caa;
 }
+
+.horizontal-scroll{
+    display: none;
+}
+        /* Área do input */
+        .input-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-left: .5em;
+            width: 77%;
+        }
+
+        .message-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            background: white;
+        }
+
+        .message-input:focus {
+            border-color: #66afbd;
+        }
+
+        .send-button {
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #66afbd, #668cbd);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .send-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 175, 189, 0.4);
+        }
+
+        .send-button:active {
+            transform: scale(0.95);
+        }
+
 @media screen and (max-width: 768px) {
 
     .menu-top {
@@ -313,8 +312,7 @@ footer {
 
     .chat-container {
         width: 100%;
-        height: 100%;
-        margin-bottom: 9em;
+        height: 70%;
         margin-top: 5em;
         margin-left: 0;
     }
@@ -324,10 +322,7 @@ footer {
         margin-right: 0;
     }
     
-    .chat-input {
-        position: fixed;
-        width: 100%;
-        top: 90%;
+    footer{
         margin-left: 0;
     }
 
@@ -337,6 +332,129 @@ footer {
     
     .dev{
         display: none;
+    }
+
+    .horizontal-scroll{
+    display: block;
+    }
+
+    .input-container {
+     width: 100%;
+    }
+
+    .bottom-bar-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid #e0e0e0;
+        padding: 15px 20px;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+
+    /* Barra de rolagem horizontal */
+    .horizontal-scroll {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding: 10px 0;
+        margin-bottom: 15px;
+        scroll-behavior: smooth;
+        margin-top: 0;
+    }
+
+    .scroll-content {
+        display: inline-flex;
+        gap: 10px;
+        padding: 5px 0;
+    }
+
+    .scroll-item {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, #66afbd, #668cbd);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        white-space: nowrap;
+    }
+
+    .scroll-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 175, 189, 0.4);
+    }
+
+    .scroll-item:active {
+        transform: translateY(0);
+    }
+
+    /* Personalização da barra de rolagem */
+    .horizontal-scroll::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #66afbd, #668cbd);
+        border-radius: 3px;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #5a9ca8, #5a7ca8);
+    }
+
+    /* Indicadores de scroll */
+    .scroll-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    .scroll-dot {
+        width: 6px;
+        height: 6px;
+        background: #ccc;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .scroll-dot.active {
+        background: #66afbd;
+        width: 20px;
+        border-radius: 3px;
+    }
+
+    .bottom-bar-container {
+        padding: 12px 15px;
+    }
+
+    .scroll-item {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .message-input {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .send-button {
+        padding: 12px 20px;
+        font-size: 14px;
     }
 }
 
