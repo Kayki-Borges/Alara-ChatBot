@@ -6,6 +6,38 @@
     box-sizing: border-box;
 }
 
+/* Adicione isso no seu CSS existente */
+.language-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    margin-left: 8px;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.sender-name {
+    font-weight: 600;
+    font-size: 12px;
+    color: #666;
+}
+
+.typing-indicator .language-info {
+    font-size: 11px;
+    color: #888;
+    margin-left: 10px;
+}
+
 body {
     background-color: whitesmoke;
     height: 100vh;
